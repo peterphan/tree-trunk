@@ -3,11 +3,13 @@ OFFSET = 4;
 CIRCLE_RADIUS = 8;
 LABEL_FONTSIZE = 12;
 LABEL_COLOR = "#000";
-CIRCLE_COLOR = "#88dddd";
+CIRCLE_COLOR = "#88dddd"; // LIGHT BLUE
+CIRCLE_SELECTED = "#FE2E2E"; // PINKISH RED
 ENTER_KEY = 13;
 
 // Global
 root = null;
+prev = null;
 current_elem = null;
 
 function Branch(line, node) {
@@ -28,7 +30,10 @@ function transformElement(elem, dx, dy) {
 }
 
 function dblClickNode(event, node) {
+	prev.circle.attr("fill", CIRCLE_COLOR);
 	current_elem = node;
+	node.circle.attr("fill", CIRCLE_SELECTED);
+	prev = current_elem;
 	document.getElementById('elemSelected').innerHTML = node.label.attr("text");
 	document.getElementById('selectNode').value = node.label.attr("text");
 	document.getElementById('setNodeName').value = node.label.attr("text");
@@ -55,7 +60,14 @@ function Canvas(containerID) {
 	this.paper = Raphael(this.container, this.width, this.height);
 	root = this.makeNode(this.width/2, CIRCLE_RADIUS, "DEFAULT");
 	current_elem = root;
+	current_elem.circle.attr("fill", CIRCLE_SELECTED);
+	prev = root;
 	document.getElementById('elemSelected').innerHTML = "DEFAULT";
+
+	coords = getXCoordinates(6, 1);
+	for(i=0; i<coords.length; i++) {
+		console.log(coords[i]);
+	}
 }
 
 Canvas.prototype.makeLabel = function(xCoord, yCoord, str) {
