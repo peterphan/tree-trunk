@@ -1,0 +1,52 @@
+body {
+	text-align: center;
+}
+
+p {
+	padding-left: 5px;
+	text-align: left;
+}
+
+input {
+	margin: 6px 0;
+}
+
+#createNode, .createNode {
+	display: inline;
+}
+
+#error {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#container {
+	padding: 0;
+	width: 800px;
+	margin: 0 auto;
+}
+
+#sidebar {
+	width: 197px;
+	float: left;
+	margin: 0;
+	padding: 0;
+	border: 1px solid black;
+	margin-right: 0px;
+}
+
+#panel {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	float: right;
+	width: 598px;
+	height: 900px;
+	border: 1px solid black;
+}
+
+#elemSelected {
+	color: green;
+	font-weight: bold;
+	font-size: 15px;
+}
