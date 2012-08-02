@@ -6,6 +6,8 @@ LABEL_COLOR = "#000";
 CIRCLE_COLOR = "#88dddd"; // LIGHT BLUE
 CIRCLE_SELECTED = "#FE2E2E"; // PINKISH RED
 ENTER_KEY = 13;
+OFFSET_BETWEEN_NODES = 45;
+CHILD_SEPARATOR_VALUE = 2;
 
 // Global
 root = null;
@@ -63,11 +65,6 @@ function Canvas(containerID) {
 	current_elem.circle.attr("fill", CIRCLE_SELECTED);
 	prev = root;
 	document.getElementById('elemSelected').innerHTML = "DEFAULT";
-
-	coords = getXCoordinates(6, 1);
-	for(i=0; i<coords.length; i++) {
-		console.log(coords[i]);
-	}
 }
 
 Canvas.prototype.makeLabel = function(xCoord, yCoord, str) {
@@ -99,6 +96,6 @@ Canvas.prototype.makeNode = function(xCoord, yCoord, str) {
 	});
 
 	transformElement(node.circle, 0, OFFSET);
-	transformElement(node.label, 0, label.getBBox().height+circle.getBBox().height/2);
+	transformElement(node.label, 0, node.label.getBBox().height + node.circle.getBBox().height/2);
 	return node;
 }
