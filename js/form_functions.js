@@ -132,6 +132,11 @@ function resetCanvas() {
 	current_elem.circle.attr("fill", CIRCLE_SELECTED);
 	prev = root;
 	document.getElementById('elemSelected').innerHTML = "DEFAULT";
+	document.getElementById('selectNode').value = node.label.attr("text");
+	document.getElementById('setNodeName').value = node.label.attr("text");
+	document.getElementById('error').innerHTML = "";
+	document.getElementById('error').style.color = "blue";
+	/* TODO: SET P to NULL */
 }
 
 /* TODO: */
