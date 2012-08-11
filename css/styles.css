@@ -2,13 +2,30 @@ body {
 	text-align: center;
 }
 
-p {
-	padding-left: 5px;
+#forms {
 	text-align: left;
 }
 
+#hover {
+	position: absolute;
+	display: none;
+	background-color: white;
+	z-index: 1000;
+	font-size: 12px;
+	padding: 100;
+	margin: 0;
+	border: 1px solid black;
+	color: #006666;
+}
+
+p {
+	padding-left: 5px;
+}
+
 input {
+	display: block;
 	margin: 6px 0;
+	margin-left: 10px;
 }
 
 #createNode, .createNode {
@@ -27,12 +44,12 @@ input {
 }
 
 #sidebar {
-	width: 197px;
+	width: 198px;
 	float: left;
 	margin: 0;
 	padding: 0;
 	border: 1px solid black;
-	margin-right: 0px;
+	
 }
 
 #panel {

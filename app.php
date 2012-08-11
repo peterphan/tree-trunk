@@ -9,11 +9,12 @@
 			<div id="sidebar">
 				<?php include("forms.php"); ?>
 			</div>
+			<div id="hover"></div>
 			<div id="panel"></div>
 			<script type="text/javascript">
 				canvas = null;
 				window.onload = function() {
-					canvas = new Canvas("panel");
+					canvas = new Canvas("panel", "sidebar");
 				}
 			</script>
 		</div>
